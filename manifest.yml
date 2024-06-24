@@ -1,0 +1,15 @@
+applications:
+  - name: appRouter
+    host: appRouter
+    path: app
+    memory: 128M
+    services:
+      - XsuaaForappRouterWithScope
+    env:
+      destinations: >
+        [
+            {
+                "name": "env_destination_saphome",
+                "url": "https://sap.com/"
+            }
+        ]

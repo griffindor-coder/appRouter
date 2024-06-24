@@ -1,0 +1,28 @@
+{
+    "xsappname": "XsuaaForappRouterWithScope",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.homePageAccessScope",
+            "description": "Scope to allow homePage access"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "RThomePageAccess",
+            "description": "Role Template for accessing the homepage",
+            "scope-references": [
+                "$XSAPPNAME.homePageAccessScope"
+            ]
+        }
+    ],
+    "oauth2-configuration": {
+        "credential-types": [
+            "instance-secret",
+            "x509"
+        ],
+        "redirect-uris": [
+            "https://*.hana.ondemand.com/**"
+        ]
+    }
+}
